@@ -127,6 +127,42 @@ For support, please:
 - Includes automatic retries and error handling
 - Saves progress to prevent data loss
 
+## 🔗 Integration with ContactHarvest
+
+This tool pairs perfectly with [ContactHarvest](https://github.com/sajdakabir/ContactHarvest) to enrich your Clutch.co data with contact information using the Apollo.io API.
+
+### Combined Workflow:
+
+1. **Scrape Company Data** (this tool)
+   ```bash
+   python app.py
+   ```
+   Output: `clutch_with_sites.csv` with company names and websites
+
+2. **Enrich with Contact Information**
+   ```bash
+   # Install ContactHarvest
+   pip install git+https://github.com/sajdakabir/ContactHarvest.git
+   
+   # Run with your Apollo.io API key
+   python -m contactharvest input.csv enriched_output.csv --api-key YOUR_APOLLO_API_KEY
+   ```
+
+### Enriched Output Includes:
+- Company name
+- Company website
+- Contact person's name
+- Job title
+- Email address
+- LinkedIn profile URL
+
+### Requirements for ContactHarvest:
+- Apollo.io API key
+- Python 3.7+
+- Internet connection
+
+> **Note:** Make sure to comply with Apollo.io's terms of service and data usage policies when using their API.
+
 ## ⚠️ Legal Notice
 
 This tool is for educational and research purposes only. Please ensure you comply with Clutch.co's Terms of Service and use this tool responsibly. The developers are not responsible for any misuse or damage caused by this software.
